@@ -1,19 +1,30 @@
 package org.lessons.java.security;
 
+import java.util.Scanner;
+
 public class PasswordGenerator {
 
-    public static void main(String[] args){
-     String nome = "Pinco";
-     String cognome = "Pallo";
-     String colorePreferito = "magenta";
-     int giornoNascita = 12;
-     int meseNascita = 5;
-     int annoNascita = 1994;
-     int dataNascita = giornoNascita + meseNascita + annoNascita;
+    public static void main(String[] args) {
+        String nome;
+        String cognome;
+        String colorePreferito;
+        int giornoNascita;
+        int meseNascita;
+        int annoNascita;
 
-     System.out.print( nome + "-" + cognome + "-" + colorePreferito + "-"  );
-     System.out.print(dataNascita);
+        Scanner input = new Scanner(System.in);
+        System.out.println("Inserisci il tuo nome, cognome, colore preferito e data di nascita (gg mm aaaa): ");
+        nome = input.nextLine();
+        cognome = input.nextLine();
+        colorePreferito = input.nextLine();
+        giornoNascita = input.nextInt();
+        meseNascita = input.nextInt();
+        annoNascita = input.nextInt();
+
+        int sommaData = giornoNascita + meseNascita + annoNascita;
+
+        String pswGenerata = nome + "-" + cognome + "-" + colorePreferito + "-" + sommaData;
+        System.out.println("La password generata è: " + pswGenerata);
+
     }
-
-
 }
